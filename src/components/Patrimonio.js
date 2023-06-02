@@ -36,16 +36,16 @@ export default function Patrimonio({...patrimonio}){
 
     return (
         <View style={styles.patrimonioContainer}>   
-            <View style={{flexDirection: "row", justifyContent: "space-between"}}>
-                <Text style={styles.nome}>{patrimonio.nome}</Text>
-                <View style={{flexDirection: "row"}} >
-                    <MaterialCommunityIcons name="circle-edit-outline" onPress={onEdit} size={32} color={themes.colors.utility.success} />
-                    <MaterialCommunityIcons name="trash-can" onPress={onDelete} size={32} color={themes.colors.utility.danger} />
-                </View>
+            <View style={{flexDirection: "column", justifyContent: "flex-start", flexWrap: 'wrap', alignItems: "flex-start"}}>
+                    <Text style={styles.nome}>{patrimonio.codigo}</Text>
+                    <Text style={styles.nome}>{patrimonio.nome}</Text>
+                    <Text style={{...styles.nome, fontWeight: "normal"}}>{patrimonio.local}</Text>
+                    <Text style={{...styles.nome, fontWeight: "normal"}}>{patrimonio.categoria}</Text>
+                    <Text style={{...styles.nome, fontWeight: "normal"}}>{patrimonio.estado}</Text>
             </View>
-            <View style={{flexDirection: "row", justifyContent: "flex-start"}}>
-                <Text style={{...styles.nome, fontWeight: "normal"}}>{patrimonio.codigo}</Text>
-                <Text style={styles.nome}>: {patrimonio.local}</Text>
+            <View style={{flexDirection: "row"}} >
+                <MaterialCommunityIcons name="circle-edit-outline" onPress={onEdit} size={32} color={themes.colors.utility.success} />
+                <MaterialCommunityIcons name="trash-can" onPress={onDelete} size={32} color={themes.colors.utility.danger} />
             </View>
         </View>
     )
@@ -55,9 +55,11 @@ export default function Patrimonio({...patrimonio}){
 const styles = StyleSheet.create({
     patrimonioContainer: {
         padding: 8,
-        backgroundColor: themes.colors.neutral.foreground,
+        backgroundColor: themes.colors.brand.roxoEscuro,
         margin: 16,
-        borderRadius: 8
+        borderRadius: 8,
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     nome: {
         fontSize: 24,

@@ -18,7 +18,7 @@ function AppStack() {
                 name="Login" 
                 component={Login} 
                 options ={{ presentation: 'modal', headerStyle:{backgroundColor: themes.colors.brand.roxoEscuro} }}
-                initialParams={{ email: "teste@teste.com" }} />
+                initialParams={{ email: "" }} />
             <Stack.Screen 
                 name="Signup" 
                 component={Signup} 
